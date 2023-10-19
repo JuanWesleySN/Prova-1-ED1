@@ -58,7 +58,7 @@ public class ListaSimplesEncadeada<T extends Comparable<T>> extends Lista<T> {
 	@Override
 	public T[] TransformarEmVetor() {
 		f (tamanho == 0) {
-            return (T[]) new Comparable[0]; // Retorna um vetor vazio
+            return (T[]) new Comparable[0];
         }
 
         T[] vetor = (T[]) new Comparable[tamanho];
