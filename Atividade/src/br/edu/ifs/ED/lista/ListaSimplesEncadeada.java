@@ -2,6 +2,14 @@ package br.edu.ifs.ED.lista;
 
 public class ListaSimplesEncadeada<T extends Comparable<T>> extends Lista<T> {
 
+	private No<T> primeiro;
+    	private int tamanho;
+
+    public ListaSimplesEncadeada() {
+        primeiro = null;
+        tamanho = 0;
+    }
+
 	
     public ListaSimplesEncadeada(){
 
@@ -49,7 +57,21 @@ public class ListaSimplesEncadeada<T extends Comparable<T>> extends Lista<T> {
 
 	@Override
 	public T[] TransformarEmVetor() {
-		throw new UnsupportedOperationException("Não implementado 'TransformarEmVetor'");
+		f (tamanho == 0) {
+            return (T[]) new Comparable[0]; // Retorna um vetor vazio
+        }
+
+        T[] vetor = (T[]) new Comparable[tamanho];
+        No<T> currentNode = primeiro;
+        int index = 0;
+
+        while (currentNode != null) {
+            vetor[index] = currentNode.dado;
+            currentNode = currentNode.proximo;
+            index++;
+        }
+
+        return vetor;
 	}
 
 }
